@@ -42,3 +42,9 @@ public struct Guard<Value: Comparable> {
         self.base = wrappedValue
     }
 }
+
+extension Guard: Equatable {
+    public static func == (lhs: Guard<Value>, rhs: Guard<Value>) -> Bool {
+        lhs.wrappedValue == rhs.wrappedValue
+    }
+}
