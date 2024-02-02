@@ -48,3 +48,9 @@ extension Guard: Equatable {
         lhs.wrappedValue == rhs.wrappedValue
     }
 }
+
+extension Guard: Hashable where Value: Hashable {
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(wrappedValue)
+    }
+}
